@@ -1,0 +1,30 @@
+// aqui va la URL  de la api no los endpoints especificos
+const API_URL = "http://localhost:8080/api/category";
+
+  export async function getCategories() {
+    const res = await fetch(`${ API_URL }/getDataCategories`);
+    return res.json();
+}
+
+export async function createCategory(data) {
+    await fetch(`${ API_URL }/newCategory`, {
+    method: "POST",
+    headers: {"Content-Type": "application(json"},
+    body: JSON.stringify(data)
+    });
+    
+}
+
+export async function updateCategory(id, data) {
+    await fetch(`${API_URL}/updateCategory/${id}`,{
+        method: "Put",
+        headers: {"Content-Type": "application(json"},
+        body: JSON.stringify(data)
+    });
+}
+
+export async function deñeteCategory(id) {
+    await fetch(`${API_URL}/deleteCategory/${id}`,{
+        method: "DELETE"
+    });
+}
