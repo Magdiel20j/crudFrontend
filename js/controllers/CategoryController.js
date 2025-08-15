@@ -107,6 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     await loadCategories();
                 }
                });
+
+               tableBody.appendChild(tr); // al tbody le agrega el <tr> creado.
+               
             });
         }
         catch (err) {
